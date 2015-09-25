@@ -1,0 +1,26 @@
+{
+  "name": "react-markdown-loader",
+  "version": "0.0.1",
+  "description": "Webpack loader for Markdown files with embedded JSX.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osnr/react-markdown-loader"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Omar Rizwan <omar.rizwan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osnr/react-markdown-loader/issues"
+  },
+  "homepage": "https://github.com/osnr/react-markdown-loader",
+  "dependencies": {
+    "babel-core": "^5.8.25",
+    "meta-marked": "^0.3.4"
+  }
+}

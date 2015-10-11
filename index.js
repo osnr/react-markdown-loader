@@ -10,6 +10,13 @@ module.exports = function(source) {
   var lines = [
     'var React = require("react");'
   ];
+  if ('styles' in meta) {
+    lines.push('var styles = [');
+    meta.styles.forEach(function(path) {
+      lines.push('require("css!' + path + '"),');
+    });
+    lines.push('];')
+  }
   if ('requires' in meta) {
     for (var name in meta.requires) {
       lines.push('var ' + name + ' = require("' + meta.requires[name] + '");');
@@ -22,6 +29,7 @@ module.exports = function(source) {
     '    return <div>' + compiled.html + '</div>;',
     '  }',
     '});',
+    'module.exports.styles = styles;', // Full CSS file content, intended to be loaded by React renderer.
     'module.exports.meta = ' + JSON.stringify(meta) + ';'
   ]);
 

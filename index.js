@@ -13,7 +13,7 @@ module.exports = function(source) {
   if ('styles' in meta) {
     lines.push('var styles = [');
     meta.styles.forEach(function(path) {
-      lines.push('require("css!' + path + '"),');
+      lines.push('require("' + path + '"),');
     });
     lines.push('];')
   }

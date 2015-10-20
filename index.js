@@ -4,6 +4,8 @@ var metaMarked = require('meta-marked');
 var babel = require('babel-core');
 
 module.exports = function(source) {
+  this.cacheable();
+
   var compiled = metaMarked(source);
   var meta = compiled.meta || {};
 

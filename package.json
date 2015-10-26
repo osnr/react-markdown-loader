@@ -4,7 +4,7 @@
   "description": "Webpack loader for Markdown files with embedded JSX.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,15 @@
   "homepage": "https://github.com/osnr/react-markdown-loader",
   "dependencies": {
     "babel-core": "^5.8.25",
-    "meta-marked": "^0.3.4"
+    "gray-matter": "^2.0.1",
+    "loader-utils": "^0.2.11",
+    "markdown-it": "^5.0.0",
+    "source-map": "^0.5.3"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   }
 }

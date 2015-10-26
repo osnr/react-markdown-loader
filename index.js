@@ -5,7 +5,10 @@ var utils = require('loader-utils');
 var matter = require('gray-matter');
 var matterParsers = require('gray-matter/lib/parsers');
 
-var md = require('markdown-it')();
+var md = require('markdown-it')({
+  html: true,
+  xhtmlOut: true
+});
 
 var babel = require('babel-core');
 
@@ -78,6 +81,8 @@ function renderTokensAsNode(tokens, options) {
       nodes.push(md.renderer.renderInline(tokens[i].children, { xhtmlOut: true }));
     } else if (type === 'paragraph_open' || type === 'heading_open') {
       nodes.push(injectLineNumbers(tokens, i, options));
+    } else if (type === 'html_block' || type === 'html_inline') {
+      nodes.push(new SourceNode(null, null, options.filename, tokens[i].content));
     } else {
       nodes.push(renderTokenAsNode(tokens, i, options));
     }

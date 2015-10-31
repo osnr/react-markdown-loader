@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Webpack loader for Markdown files with embedded JSX.",
   "main": "index.js",
+  "registry": "npm",
   "scripts": {
     "test": "mocha"
   },

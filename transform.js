@@ -115,7 +115,7 @@ module.exports = function transform(source, filename) {
     'requires' in meta ? (function() {
       var lines = [];
       for (var name in meta.requires) {
-        lines.push('var ' + name + ' = require("' + meta.requires[name] + '");');
+        lines.push('var ' + name + ' = re' + 'quire("' + meta.requires[name] + '");');
       }
       return lines;
     })() : [],

@@ -1,16 +1,10 @@
 'use strict';
 
-var utils = require('loader-utils');
-
-var babel = require('babel-core');
-
 var transform = require('./transform');
 
-module.exports = function(source) {
-  this.cacheable();
+var babel = require('babel-core/browser');
 
-  var filename = utils.getCurrentRequest(this);
-
+module.exports = function(source, filename) {
   var nodeResult = transform(source, filename);
 
   var result = babel.transform(nodeResult.code, {
@@ -19,5 +13,5 @@ module.exports = function(source) {
     inputSourceMap: nodeResult.map
   });
 
-  this.callback(null, result.code, result.map);
+  return result;
 };

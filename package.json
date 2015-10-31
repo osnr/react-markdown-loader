@@ -1,6 +1,6 @@
 {
   "name": "react-markdown-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Webpack loader for Markdown files with embedded JSX.",
   "main": "index.js",
   "scripts": {

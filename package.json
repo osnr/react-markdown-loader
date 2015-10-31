@@ -32,5 +32,11 @@
     "mocha": "^2.3.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
+  },
+  "jspm": {
+    "map": {
+      "coffee-script": "@empty",
+      "toml": "@empty"
+    }
   }
 }
